@@ -1,0 +1,13 @@
+{
+    "do_git_backup": true,
+    "git_push_interval_minutes": 0,
+
+    "private_folders": [
+        "*"
+    ],
+    "public_folders": [
+        "other notes"
+    ]
+}
+
+    

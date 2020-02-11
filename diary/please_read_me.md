@@ -1,4 +1,1 @@
-diary/ is a private folder by default.
-Anything you keep in it will be encrypted.
-You can delete this document now, and start creating your own.
-For more info, go through the documentation.
+=*=3nC0d3dH3aDer==*mGjDcscKesIKMkiwaV9z6kdx4KuaOa9CR-a_oW-tKmbI2UDhknnhBPUCj0jnQFyFbjkxwn5gl8bDAT2MBAZ8OH0errh1g7ihn1UZHVSlwwEZU6DBVUfSt-ue3OU-RdLLAfZQ9SOCJrGYHs1WgaqTZ58_lxqYUMW9rhAGF-lvOEivZquVclfwZ_ZsJ57mCqZ7cMEwEMky6WoCi8cZxKSfvKsWqt5t9f18B0Q4bR4oMd0THU_o8qR8-v0NZjzobfibHSui7nw7IrbWrjDBvJI3I_w=
