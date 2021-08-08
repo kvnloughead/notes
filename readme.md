@@ -1,0 +1,1 @@
+This is repository for the notes for my note taking app (in progress).
