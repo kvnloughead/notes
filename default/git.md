@@ -22,7 +22,7 @@ git add .                                    # (3)
 git commit -c ORIG_HEAD                      # (4)
 ```
 
-Explanation
+Explanation - [source](https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git)
 1. This command is responsible for the undo. It will undo your last commit while leaving your working tree (the state of your files on disk) untouched. You'll need to add them again before you can commit them again).
 2. Make corrections to working tree files.
 3. git add anything that you want to include in your new commit.
