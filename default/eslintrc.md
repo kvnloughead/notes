@@ -10,7 +10,6 @@ Example
 ```JS
 module.exports = {
   env: {
-    es6: true,
     browser: true,
     es2021: true,
   },

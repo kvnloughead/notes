@@ -6,13 +6,28 @@ Date: 2021-10-13
 Tags:   
 ---  
 
+## Branches
+```bash
+# rename local branch
+git branch -m <oldname> <newname>
+
+# to delete a branch locally and on github
+git branch -D <localBranchName>
+git push origin --delete <remoteBranchName>
+
+# to change remote repo
+git remote set-url <repo-name> <new-repo>
+```
+
+## New Repos
 ```bash
 # To set up new remote repo from command line
 gh create-repo project-name
-git remote add origin $GH/project-name
+git remote add origin $GH/project-name.git
 git push -u origin main
 ```
 
+## Undo Commits
 ```bash
 # To undo a commit and redo
 git commit -m "Something terribly misguided" # (0: Your Accident)
