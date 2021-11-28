@@ -1,9 +1,7 @@
 ---  
-Title: work  
+Title: curl  
 Category: default  
 Author: Kevin Loughead  
-Date: 2021-11-06  
+Date: 2021-11-26  
 Tags:   
 ---  
-
-- [ ] tickets
