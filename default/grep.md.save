@@ -1,0 +1,16 @@
+---  
+Title: grep  
+Category: default  
+Author: Kevin Loughead  
+Date: 2021-09-15  
+Tags:   
+---  
+
+## Find pattern in filename
+`from utils.constants import EDITOR, get_base_path`
+
+# Pipe man page to grep
+```bash
+man curl | grep -- pattern
+```
+

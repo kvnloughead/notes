@@ -1,16 +1,16 @@
----  
-Title: heroku  
-Category: default  
-Author: Kevin Loughead  
-Date: 2021-10-25  
-Tags:   
----  
+---
+Title: heroku
+Category: default
+Author: Kevin Loughead
+Date: 2021-10-25
+Tags:
+---
 
 ## Deploy an app to heroku
 
-```bash 
+```bash
 # creates a new remote called heroku with random name
-heroku create 
+heroku create
 
 # creates project with given name (if available)
 heroku create project-name
@@ -29,7 +29,11 @@ git push heroku main
 ```bash
 
 # run heroku app locally
-heroku local web	
+heroku local web
 
 # run heroku app locally with nodemon
 nodemon --exec 'heroku local'
+```
+
+## Links
+1. set up MongoDB https://www.mongodb.com/developer/how-to/use-atlas-on-heroku/
