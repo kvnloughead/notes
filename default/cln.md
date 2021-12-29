@@ -7,15 +7,13 @@ Tags:
 ---  
 
 
+- [] prompt to create new notes / tags
+- [] rename notes
 - [] add readme for .notes and .dev-notes on initial setup
-- [] make flags work for subcommands
 - [] config file
   - editor, author
 - [] try getting this set up on another machine
-- [] tab to auto-complete
-- [] make --show only show non-empty directories
-- [] better error handling when called with bad / no options
-- [] when called with no args, should give help (currently it makes a note called None)
+- [] auto-complete
 - [] metadata - last updated
 - [] tags
 

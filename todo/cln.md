@@ -1,7 +1,0 @@
----  
-Title: cln  
-Category: todo  
-Author: Kevin Loughead  
-Date: 2021-11-07  
-Tags:   
----  
