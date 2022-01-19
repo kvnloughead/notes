@@ -6,6 +6,9 @@ Date: 2021-11-28
 Tags:   
 ---  
 
+- [] check for existing notes with same name in different categories
+    - when attempting to delete
+    - when attempting to edit
 - [] have default EDITOR read from system defaults
 - [] testing
 - [] --exclude-metadata flag for `grep` and/or `find`
