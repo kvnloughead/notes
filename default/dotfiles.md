@@ -7,12 +7,19 @@ Tags:
 ---
 
 ## immediate
+- backup - make ignore tutor, practicum projects, node_modules
 - [] write install script
 		- should install micro, watson, pyenv
 		- should ask "do you have VSCode and Terminal installed"
 			- if yes, should call set_all_configs
 			- if no, should say "VSCode and Terminal config files were
 			  not installed. Go install them and then run `set_windows_configs`"
+		- make Ubuntu-20.04 profile the default in Terminal
+		- clean up
+		  - delete terminal/terminal.sh and corresponding vscode.sh
+		  - delele corresponding readme's
+		  - update readme
+
 
 ## Long term
 
