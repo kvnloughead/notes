@@ -7,6 +7,7 @@ Tags:
 ---  
 
 - fix rename
+- handle show gracefully when no notes yet
 - [] check for existing notes with same name in different categories
     - when attempting to delete
     - when attempting to edit
