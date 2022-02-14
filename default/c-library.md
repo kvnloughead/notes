@@ -19,5 +19,6 @@ Tags:
 
 ## Other
 - `limits`
+  - stores min/max values for each data type
 - `float`
 

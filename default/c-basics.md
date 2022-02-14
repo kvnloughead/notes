@@ -7,17 +7,7 @@ Tags:
 ---
 
 ## Run programs
-Compile and run a file with `gcc file.c && ./a.out`
+- Compile and run a file with `gcc file.c && ./a.out`
+- Compile to a named file `gcc -o filename file.c`
 
-
-## Basic data types
-
-integers: int, short, long
-floats: float, double
-single-byte character: char
-
-arrays
-structures
-unions
-pointers
-functions
+- Pass file to standard input `./a.out < filename`
