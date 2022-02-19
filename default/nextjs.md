@@ -12,7 +12,7 @@ Tags:
 ## Fonts
 - three ways to add fonts to nextjs project - https://johnny.am/blog/n2-adding-google-fonts-to-nextjs-project
 
-## Setting up eslint
+## Setting up eslint on nextjs
 ```bash
 npm i --save-dev eslint eslint-plugin-react
 eslint --init
