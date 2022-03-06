@@ -6,38 +6,97 @@ Date: 2021-12-12
 Tags:
 ---
 
-## immediate
-- backup - make ignore tutor, practicum projects, node_modules
-- [] write install script
-		- should install micro, watson, pyenv
-		- should ask "do you have VSCode and Terminal installed"
-			- if yes, should call set_all_configs
-			- if no, should say "VSCode and Terminal config files were
-			  not installed. Go install them and then run `set_windows_configs`"
-		- make Ubuntu-20.04 profile the default in Terminal
-		- clean up
-		  - delete terminal/terminal.sh and corresponding vscode.sh
-		  - delele corresponding readme's
-		  - update readme
+## Second attempt -- Bare Repo Dotfiles
 
+Resources
 
-## Long term
+- great explanation of bare repo dotfiles https://stegosaurusdormant.com/bare-git-repo/#fnref:no-home-git-repo
+- example of bare repo dotfiles https://github.com/kalkayan/dotfiles
 
-- [] figure out better way to iterate through files (see .bash_profile)
-- [] move practicum projects to `~/practicum/projects`
-- [] refactor functions in window.sh
-- [] figure out why can't open $terminalconfig etc. with vscode
-  - works fine with micro, nano
-  - code wants to open it with it's windows file path
+### Inital setup
 
-1. Making $HOME a git repo (avoids symlinks) - https://drewdevault.com/2019/12/30/dotfiles.html
+1. Create a new bare Git repo in `~/.dotfiles` to store the history for your dotfiles.
+
+```sh
+git init --bare $HOME/.dotfiles
+```
+
+2. Create alias for running git commands for the dotfiles repo
+
+```sh
+alias dotgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# --git-dir tells git where history is
+# --work-tree tells git where working tree is
+# add this to .bashrc
+```
+
+3. Ignore untracked files
+
+I am torn between this and `echo "*" >> .gitignore`.
+
+```sh
+dotgit config status.showUntrackedFiles no
+
+# helpfully, this prompts with "(use -u to show untracked files)" when you run `git commit`
+# but less helpfully, the `-u` flag shows everything in .dotfiles bare repo...
+```
+
+4. Setup remote repo
+
+```sh
+dotgit remote add origin remote-url
+```
+
+###
+
+Workflow
+
+```sh
+dotgit add some-file
+dotgit commit -m "message"
+dotgit push origin main
+```
+
+### Setup a new machine
+
+1. Clone repo as non-bare repository
+
+```sh
+git clone \
+   --separate-git-dir=$HOME/.dotfiles \
+   remote-url \
+   dotfiles-tmp
+
+# --separate-git-dir means history should go in $HOME/.dotfiles
+# snapshot will go in dotfiles-tmp
+```
+
+2. Copy snapshot to where each file should go
+
+```sh
+rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
+
+# I'm not sure why `cp` isn't being used. And not sure why `.git` needs to be
+# excluded. I would have expected `.git` to only reside inside `.dotfiles`.
+```
+
+3. `rm -rf dotfiles-tmp`
+
+## First attempt -- Repo in $HOME with `.gitignore` of `*`
+
+1. Article - https://drewdevault.com/2019/12/30/dotfiles.html
 2. How to set up on new machine
 
-```
+```sh
 cd ~
 git init
-git remote add origin https://github.com/kvnloughead/dotfiles
+git remote add origin repo-url
 git fetch
 git checkout -f main
 ```
 
+3. Problems
+   a. Everything under $HOME is already in a git repo.So running a command for repo X in some non-git directory inside of $HOME will actually run the command in your dotfiles repo. Not good.
+   b. Impossible to use override global settings in a nested repo? If not impossible, at least annoyingly difficult. Learned this when trying to push from a separate account from inside a nested repo.
+   c. README in $HOME
