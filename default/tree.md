@@ -6,7 +6,7 @@ Date: 2022-02-25
 Tags:   
 ---  
 
-```
+```sh
 # show tree with sizes of all files and directories
 tree --du -h
 ```
