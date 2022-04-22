@@ -8,5 +8,10 @@ Tags:
 
 ```sh
 # show tree with sizes of all files and directories
-tree --du -h
+tree -h
+
+# Flags
+# -d lists only directories
+# -u display file owner or UID
 ```
+
