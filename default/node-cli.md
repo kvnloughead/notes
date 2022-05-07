@@ -6,6 +6,8 @@ Date: 2022-04-29
 Tags:
 ---
 
+[Creating a CLI with typescript](https://medium.com/geekculture/building-a-node-js-cli-with-typescript-packaged-and-distributed-via-homebrew-15ba2fadcb81)
+
 [Steps to create node CLI](https://developer.okta.com/blog/2019/06/18/command-line-app-with-nodejs)
 
 Basically,

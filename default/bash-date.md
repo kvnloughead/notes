@@ -6,7 +6,7 @@ Date: 2022-03-05
 Tags:
 ---
 
-```sh
+```bash
 # print date yyyy-mm-dd
 date '+%Y-%m-%d'
 
