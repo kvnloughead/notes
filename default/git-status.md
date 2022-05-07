@@ -6,7 +6,7 @@ Date: 2022-03-03
 Tags:
 ---
 
-```sh
+```bash
 # Show untracked files and directories, recursively. Useful if you are ignoring
 # tracked files (like in a bare dotfiles repo). Annoying shows *everything*
 # including git files.

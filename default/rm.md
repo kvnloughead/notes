@@ -6,7 +6,7 @@ Date: 2022-03-17
 Tags:
 ---
 
-```sh
+```bash
 # recursively remove all files with extension .ext
 rm -r **/*.ext
 ```

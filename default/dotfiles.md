@@ -17,13 +17,13 @@ Resources
 
 1. Create a new bare Git repo in `~/.dotfiles` to store the history for your dotfiles.
 
-```sh
+```bash
 git init --bare $HOME/.dotfiles
 ```
 
 2. Create alias for running git commands for the dotfiles repo
 
-```sh
+```bash
 alias dotgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # --git-dir tells git where history is
@@ -35,7 +35,7 @@ alias dotgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 I am torn between this and `echo "*" >> .gitignore`.
 
-```sh
+```bash
 dotgit config status.showUntrackedFiles no
 
 # helpfully, this prompts with "(use -u to show untracked files)" when you run `git commit`
@@ -44,7 +44,7 @@ dotgit config status.showUntrackedFiles no
 
 4. Setup remote repo
 
-```sh
+```bash
 dotgit remote add origin remote-url
 ```
 
@@ -52,7 +52,7 @@ dotgit remote add origin remote-url
 
 Workflow
 
-```sh
+```bash
 dotgit add some-file
 dotgit commit -m "message"
 dotgit push origin main
@@ -62,7 +62,7 @@ dotgit push origin main
 
 1. Clone repo as non-bare repository
 
-```sh
+```bash
 git clone \
    --separate-git-dir=$HOME/.dotfiles \
    remote-url \
@@ -74,7 +74,7 @@ git clone \
 
 2. Copy snapshot to where each file should go
 
-```sh
+```bash
 rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
 
 # I'm not sure why `cp` isn't being used. And not sure why `.git` needs to be
@@ -88,7 +88,7 @@ rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
 1. Article - https://drewdevault.com/2019/12/30/dotfiles.html
 2. How to set up on new machine
 
-```sh
+```bash
 cd ~
 git init
 git remote add origin repo-url

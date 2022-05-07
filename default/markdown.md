@@ -14,7 +14,7 @@ Tags:
 
    Like this.
 
-   ```sh
+   ```bash
    # same with code blocks
    ```
 

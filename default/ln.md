@@ -6,7 +6,7 @@ Date: 2022-03-17
 Tags:
 ---
 
-```sh
+```bash
 # create symlink of TARGET called LINK_NAME
 ln -s TARGET LINK_NAME
 ```

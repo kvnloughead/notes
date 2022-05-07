@@ -8,7 +8,7 @@ Tags:
 
 ## Commands
 
-```sh
+```bash
 crontab -l # show crontab file for current user
 crontab -e # edit jobs for current user
 ```

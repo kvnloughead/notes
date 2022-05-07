@@ -6,7 +6,7 @@ Date: 2022-03-05
 Tags:
 ---
 
-```sh
+```bash
 # create file and write to it
 echo "write this" >> .gitignore
 ```

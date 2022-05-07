@@ -6,7 +6,7 @@ Date: 2022-03-06
 Tags:
 ---
 
-```sh
+```bash
 # Generate new key
 ssh-keygen -t ed25519 -C "kvnloughead@gmail.com"
 

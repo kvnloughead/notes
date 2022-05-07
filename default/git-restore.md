@@ -6,7 +6,7 @@ Date: 2022-03-07
 Tags:
 ---
 
-```sh
+```bash
 # unstage files
 git restore --staged files...
 ```

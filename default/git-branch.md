@@ -6,7 +6,7 @@ Date: 2022-03-05
 Tags:
 ---
 
-```sh
+```bash
 # rename branch
 git branch -m oldname newname
 ```
