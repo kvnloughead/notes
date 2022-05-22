@@ -15,10 +15,13 @@ Tags:
    # --skip-bundle allows you to update the packages in Gemfile before installing
    rails _6.1.4.6_ new hello_app --skip-bundle
 
+   # if you are going to eventually be using prod only gems, such as
+   # when deploying on heroku, run this command
+   bundle _2.2.17_ config set --local without 'production'
+
    # if using --skip-bundle, update Gemfile as desired (example below)
-   # then...
    bundle _2.2.17_ install
-   rails webpacker:install # not necessary on all systems
+   rails _6.1.4.6_ webpacker:install # not necessary on all systems
    ```
 
 2. Set up rails server (not necessary on all systems)
