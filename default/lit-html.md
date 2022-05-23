@@ -8,28 +8,24 @@ Tags:
 
 Full HTML support inside template literals. It took some effort to get it set up.
 
-- Not sure if I needed to install it via npm? (try uninstalling)
+1.  Install prettier, lit-html and lit-plugin extensions
+2.  If syntax highlighting doesn't work, uninstall Babel JavaScript if you have it installed. See [this issue](https://github.com/mjbvz/vscode-lit-html/issues/82) for more possible solutions
+3.  If formatting doesn't work,
+    a. make sure prettier is installed
+    b. Try adding these settings to settings.json
 
-- needed to enable [syntax highlighting](https://github.com/mjbvz/vscode-lit-html/issues/82)
+        ```json
+        "typescript.tsserver.useSyntaxServer": "never",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        ```
 
-  - solution - uninstall Babel JavaScript
+I'm not actually sure if that was what did the trick for me. See [here](https://github.com/mjbvz/vscode-lit-html/issues/71) for more options.
 
-- needed to enable formatting [link](https://github.com/mjbvz/vscode-lit-html/issues/71)
+4. Add these to settings.json to enable emmet ([source])(https://github.com/microsoft/typescript-lit-html-plugin/issues/2)
 
-  - This one, I'm not exactly sure what finally fixed it for me. Maybe one of these?
-
-    ```json
-    "typescript.tsserver.useSyntaxServer": "never",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    ```
-
-- needed to enable emmet [link](https://github.com/microsoft/typescript-lit-html-plugin/issues/2)
-
-  ```json
-  "emmet.includeLanguages": {
-        "typescript": "html",
-      "javascript": "html"
-  }
-  ```
-
-- still a minor issue when you paste template in with the closing backtick on the same line, it messes with the formatting
+```json
+"emmet.includeLanguages": {
+  "typescript": "html",
+  "javascript": "html"
+}
+```

@@ -13,6 +13,8 @@ Validate data in `models/model-name.rb`.
 ```rb
 class ModelName < ApplicationRecord
   # restrict character length of content field to 140
-  validates :content, length: { maximum: 140 }
+  validates :content, length: { maximum: 140 },
+                      # must be present
+                      presence: true
 end
 ```

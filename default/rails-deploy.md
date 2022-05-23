@@ -6,7 +6,7 @@ Date: 2022-05-21
 Tags:   
 ---  
 
-# To Heroku (examples show versions from learnenough tutorial)
+## To Heroku (examples show versions from learnenough tutorial)
 
 1. Add postgres gem (`pg`) to production environment
 
@@ -51,3 +51,5 @@ test environments
 
   To add Heroku's Linux platform to Gemfile.lock. Then add, commit and push
   again. This may need to be done everytime on Linux, I'm not sure.
+
+7. Anytime you create new resources you'll have to run `heroku run rails db:migrate` before deploying
