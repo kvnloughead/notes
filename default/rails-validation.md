@@ -1,14 +1,14 @@
----  
-Title: rails-validation  
-Category: default  
-Author: Kevin Loughead  
-Date: 2022-05-22  
-Tags:   
----  
+---
+Title: rails-validation
+Category: default
+Author: Kevin Loughead
+Date: 2022-05-22
+Tags:
+---
 
-Validate data in `models/model-name.rb`. 
+Validate data in `models/model-name.rb`.
 
-## Examples 
+## Examples
 
 ```rb
 class ModelName < ApplicationRecord
@@ -18,3 +18,5 @@ class ModelName < ApplicationRecord
                       presence: true
 end
 ```
+
+Test validation in `model-name_test.rb`

@@ -27,32 +27,29 @@ rails test
 
 2. Automating tests with guard
 
-   a. run `bundle _2.2.17_ exec guard init`
+   a. run `bundle _2.3.14_ exec guard init`
    b. edit the resulting `Guardfile` (see rails-guardfile for a sample)
-   c. run `bundle _2.2.17_ exec guard` in a new terminal
+   c. run `bundle _2.3.14_ exec guard` in a new terminal
    d. tests will now run automatically as specified in Guardfile. To run all tests, hit enter at the `guard>` prompt
 
    Troubleshooting. If tests fail with no apparent cause, try this
 
    ```bash
    bin/spring stop    # Try this if the tests mysteriously start failing.
-   bundle _2.2.17_ exec guard
+   bundle _2.3.14_ exec guard
    ```
 
-3. Gemfile for improved testing
+## Integration Testing
 
-This testing setup requires various gems in Gemfile. Here is the setup I used for reference:
+Generate with `rails generate integration_test test_name`
 
 ```rb
-# Gemfile
-group :test do
-  gem "capybara", "3.35.3"
-  gem "selenium-webdriver", "3.142.7"
-  gem "webdrivers", "4.6.0"
-  gem "rails-controller-testing", "1.0.5"
-  gem "minitest", "5.11.3"
-  gem "minitest-reporters", "1.3.8"
-  gem "guard", "2.16.2"
-  gem "guard-minitest", "2.4.6"
+# generated => test/integration/test_name_test.rb
+class SiteLayoutTest < ActionDispatch::IntegrationTest
+
+  # tests
+
 end
 ```
+
+[Source](https://www.learnenough.com/ruby-on-rails-7th-edition-tutorial/filling_in_the_layout#sec-layout_link_tests)

@@ -1,29 +1,30 @@
----  
-Title: rails-routes  
-Category: default  
-Author: Kevin Loughead  
-Date: 2022-05-21  
-Tags:   
----  
+---
+Title: rails-routes
+Category: default
+Author: Kevin Loughead
+Date: 2022-05-21
+Tags:
+---
 
 [Routing guide](https://guides.rubyonrails.org/routing.html)
 
+## Define routes in config/routes.rb
+
 ```rb
-# define a route in config/routes.rb
 Rails.application.routes.draw do
-  root 'controller#action'
-end
+  # corresponds to the names `root_path` and `root_url`
+  root "controller_name#home"
 
-# controller corresponds to controller_controller.rb
-# action is the name of a function defined in controller_-_controller.rb
-```
+  # corresponds to the names `controller_name_action_...`
+  get "controller_name#home"
+  get "controller_name#help"
 
-```rb
-# corresponding controller_controller.rb
-class ApplicationController < ActionController::Base
-  def action
-    render html: "hello, world!"
-  end
+  # give a shorter name
+  get "/help", to: "static_pages#help"
 end
 ```
 
+- `root_path` -> '/'
+- `root_url` -> 'http://foobar.com/'
+- Other controllers follow a similar pattern
+- Use `_path` except for redirects

@@ -1,47 +1,83 @@
----  
-Title: rails-model  
-Category: default  
-Author: Kevin Loughead  
-Date: 2022-05-21  
-Tags:   
----  
+---
+Title: rails-model
+Category: default
+Author: Kevin Loughead
+Date: 2022-05-21
+Tags:
+---
 
-## Generate User resource with scaffolder
+## Generate a model
 
 ```bash
-# syntax is pretty self-explanatory
-# really basic example with just two properties
-rails generate scaffold User name:string email:string
+# syntax
+rails generate model ModelName <prop>:<datatype> ...
+
+# example - note the singular name
+rails generate model User name:string ...
+```
+
+## Migrate database
+
+[Docs](https://edgeguides.rubyonrails.org/active_record_migrations.html)
+
+```bash
+# migrate (ie, running create_table)
 rails db:migrate
+
+# un-migrate (ie, running drop_table)
+rails db:rollback
 ```
 
-- note that resources are singular
-- and the id is generated automatically to serve as primary key
-- need to restart server after migrating
+## Working with models
 
-## What the scaffolder gives you
+### Creating and destroying documents
 
-A controller `users_controller.rb` with actions corresponding to the following routes:
+```rb
+# create a User document, returning created document
+user = User.new(args)
 
-```bash
-/users        # action=index --> lists all users
-/users/1      # action=show  --> shows user with id 1
-/users/new    # action=new   --> create new user
-/users/1/edit # action=edit  --> edit user with id 1
+# save it to DB, returning true if successful
+user.save
+
+# create and save to DB, returning the created document
+user = User.create(args)
+
+# destroy a document, returning the document
+# use User.find(deletedId) to confirm deletion
+user.destroy
 ```
 
-Plus an action to destroy users. Also, HTML view templates for these routes. In `config/routes.rb` it writes
+### Finding documents
 
-## Limitations
+```rb
+# returns user with id of 1, or raises ActiveRecord::RecordNotFound
+User.find(id)
 
-- no data validation
-- no authentication
-- no tests
-- no style
+# returns user with supplied properties
+User.find_by(email: "foo@bar.com")
 
+# return all users as an array-like ActiveRecord::Relation
+User.all
+```
 
+### Updating documents
 
+```rb
+# update a property
+user = User.create(name: "foo", email: "foo@bar.com")
+user.save
 
+# update multiple properties -- saving is not necessary
+user.update(name: "Kevin", email: "kevin@mail.com")
+```
 
+### Other
 
+```rb
+# check validity - can create, but can't save, invalid documents
+user.validity?
 
+# return a hash of validation error messages
+# messages don't seem to appear until you've run user.validity?
+user.errors.messages
+```
