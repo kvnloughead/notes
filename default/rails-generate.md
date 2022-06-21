@@ -14,6 +14,8 @@ Tags:
 rails generate controller FooBar do_this do_that
 ```
 
+- Only list actions that should have corresponding views
+
 ## Destroying
 
 Convenient commands to undo `rails generate`. In general,

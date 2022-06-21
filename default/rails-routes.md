@@ -28,3 +28,7 @@ end
 - `root_url` -> 'http://foobar.com/'
 - Other controllers follow a similar pattern
 - Use `_path` except for redirects
+
+## Notes
+
+- Run `rails routes` to see a list of all routes available in your application
