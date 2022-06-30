@@ -53,3 +53,7 @@ end
 ```
 
 [Source](https://www.learnenough.com/ruby-on-rails-7th-edition-tutorial/filling_in_the_layout#sec-layout_link_tests)
+
+## Miscellaneous
+
+- Normal helper methods aren't available in tests, so create them in `test/test_helper.rb`
