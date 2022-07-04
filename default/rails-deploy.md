@@ -6,7 +6,7 @@ Date: 2022-05-21
 Tags:
 ---
 
-## To Heroku (examples show versions from learnenough tutorial)
+## Deploy to Heroku (examples show versions from learnenough tutorial)
 
 1.  Add postgres gem (`pg`) to production environment
 
@@ -56,7 +56,7 @@ again. This may need to be done everytime on Linux, I'm not sure.
 
 7.  Anytime you create new resources you'll have to run `heroku run rails db:migrate` before deploying
 
-8.  Production deployment
+## Production deployment
 
     a. Setup SSL
 
@@ -126,3 +126,16 @@ again. This may need to be done everytime on Linux, I'm not sure.
             username: sample_app
             password: <%= ENV['SAMPLE_APP_DATABASE_PASSWORD'] %>
             ```
+
+## Maintenance Mode
+
+[Source](https://www.learnenough.com/ruby-on-rails-7th-edition-tutorial/advanced_login#sec-advanced_login_conclusion)
+
+"Before deploying to Heroku, it’s worth noting that the application will briefly be in an invalid state after pushing but before the migration is finished. On a production site with significant traffic, it’s a good idea to turn maintenance mode on before making the changes:"
+
+```bash
+heroku maintenance:on
+git push heroku
+heroku run rails db:migrate
+heroku maintenance:off
+```
