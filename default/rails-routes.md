@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 end
 ```
 
+## Difference between \_url and \_path
+
 - `root_path` -> '/'
 - `root_url` -> 'http://foobar.com/'
 - Other controllers follow a similar pattern
@@ -32,3 +34,15 @@ end
 ## Notes
 
 - Run `rails routes` to see a list of all routes available in your application
+
+## RESTful routes
+
+| Request | URL           | Action  | Named route          |
+| ------- | ------------- | ------- | -------------------- |
+| GET     | /users        | index   | users_path           |
+| GET     | /users/1      | show    | user_path(user)      |
+| GET     | /users/new    | new     | new_user_path        |
+| POST    | /users        | create  | users_path           |
+| GET     | /users/1/edit | edit    | edit_user_path(user) |
+| PATCH   | /users/1      | update  | user_path(user)      |
+| DELETE  | /users/1      | destroy | user_path(user)      |
