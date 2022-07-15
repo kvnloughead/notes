@@ -57,3 +57,5 @@ end
 ## Miscellaneous
 
 - Normal helper methods aren't available in tests, so create them in `test/test_helper.rb`
+
+- Creating an @variable in Controller.create allows you to access the instance inside tests using `assigns(:variable)`.
