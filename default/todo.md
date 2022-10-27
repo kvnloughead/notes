@@ -6,10 +6,10 @@ Date: 2021-11-05
 Tags:
 ---
 
-## Automations
+WTWR
 
-- Check git stash for a stash with some tag in the message, like WIP. Prompt user with something like "would you like to start where you left off with MESSAGE"
+- set up use effect to capture screensize (to vary style of date)
+- fix header on mobile
 
-## CLN
-
-- improve find (autocomplete, select found notes, fuzzy find)
+- weather cards
+  - differentiate more between volcanos and fog..
