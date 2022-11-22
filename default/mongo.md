@@ -21,3 +21,16 @@ It's a bit of a pain. After adding `unique: true` to a schema field
 - sudo chown -R `id -un` data/db
 
 Then run server with `mongod`.
+Date: 2022-07-15
+Tags:
+
+---
+
+## WSL2 Setup and Installation
+
+```bash
+sudo apt-get install mongodb -y
+sudo mkdir -p /data/db
+# need to be able to access the directory
+sudo chmod -R go+w /data/db
+```

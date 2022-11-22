@@ -39,8 +39,13 @@ user = User.new(args)
 # save it to DB, returning true if successful
 user.save
 
-# create and save to DB, returning the created document
+# create and save to DB
+# returns the created document or false
 user = User.create(args)
+
+# create and save to DB
+# returns the created document throws an error
+user = User.create!(args)
 
 # destroy a document, returning the document
 # use User.find(deletedId) to confirm deletion

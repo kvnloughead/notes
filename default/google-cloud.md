@@ -270,3 +270,7 @@ After all this, the run
 
 - `sudo nginx -t`
 - `sudo systemctl restart nginx`
+
+```
+
+```

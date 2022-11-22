@@ -46,3 +46,17 @@ end
 | GET     | /users/1/edit | edit    | edit_user_path(user) |
 | PATCH   | /users/1      | update  | user_path(user)      |
 | DELETE  | /users/1      | destroy | user_path(user)      |
+
+## Query parameters
+
+- To use query parameter in rails routes, pass it as a second argument:
+
+  ```rb
+  edit_account_activation_url(@user.activation_token, email: 'foo@example.com')
+  ```
+
+  produces something like
+
+  ```
+  .../account_activations/q5lt38hQDc_959PVoo6b7A/edit?email=foo%40example.com
+  ```
