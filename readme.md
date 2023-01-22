@@ -7,12 +7,14 @@ pushed to GitHub with the `cln push` command.
 First time setup is explained in the application's readme. Setting up on a new device is a bit more
 complicated.
 
-## Setup instructions
+## Setup new device instructions
 
 ```
-cd ~/.notes
+mkdir -p ~/.cln/notes
+cd ~/.cln/notes 
 git init
-git remote add https://github.com/kvnloughead/notes
-git fetch
-git checkout -f main
+git remote add origin your-notes-repo
+git pull origin main
 ```
+
+
