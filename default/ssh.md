@@ -39,3 +39,12 @@ I haven't succeeded so far in using ssh-copy-id, but it works to pass the public
 # ip not needed if they share ip addressed
 ssh username@computer-name
 ```
+
+However, this only works when the lid is not closed. Solution:
+
+```bash
+sudo vim /etc/systemd/login.conf
+```
+
+Then uncomment `#HandleLidSwitch=suspend` and change it to `ignore`  
+
