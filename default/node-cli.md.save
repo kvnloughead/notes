@@ -33,18 +33,6 @@ Basically,
    ```
 
 2. Add shebang to bin/index.js `#!/usr/bin/env node`
-3. intall globally with `npm install -g .`
+3. install globally with `npm install -g .` (Equivalently, you can run `npm link` from inside the package)
 4. may need to make it executable with chmod +x
 
-## Other commands
-
-- `npm login` logs in to npm
-- `npm whoami` lists logged in user
-- `npm publish` publishes a package to npm
-
-## packages of note
-
-- `chalk` colorizes terminal text. To use require syntax, stick with ^4
-- `log-symbols` has cross-platform icons for log statuses log "info", "warning", ... 
-   To use require syntax, stick with ^4
-- `licensed` provides licenses. Ex: `npx licensed MIT`
