@@ -45,6 +45,7 @@ Basically,
 ## packages of note
 
 - `chalk` colorizes terminal text. To use require syntax, stick with ^4
-- `log-symbols` has cross-platform icons for log statuses log "info", "warning", ... 
-   To use require syntax, stick with ^4
+- `log-symbols` has cross-platform icons for log statuses log "info", "warning", ...
+  To use require syntax, stick with ^4
 - `licensed` provides licenses. Ex: `npx licensed MIT`
+- `clibboardy` accesses clipboard, cross-platform
