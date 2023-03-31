@@ -6,6 +6,8 @@ Date: 2021-09-15
 Tags:
 ---
 
+To grep through all files in a git repo: `git grep`. Great for ignoring the ignorables.
+
 ```bash
 # Sort a string.
 # The `grep -o .` part prints each character on a new line.
