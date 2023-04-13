@@ -17,34 +17,27 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ```
 
-## opening PC to SSH
-- [open port 22](https://linuxconfig.org/how-to-open-ssh-port-22-on-ubuntu-20-04-focal-fossa-linux)
-- [to enable password auth](https://serverpilot.io/docs/how-to-enable-ssh-password-authentication/)
-- [enable ssh service on 22.04](https://ubuntuhandbook.org/index.php/2022/04/enable-ssh-ubuntu-22-04/)
+## opening PC to SSH (linux)
 
-   In practice, I needed to run
+https://linuxhint.com/enable-ssh-linux-mint/
 
-   ```bash
-   sudo apt install ssh
-   sudo systemctl enable ssh
-   ```
+```
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo systemctl status ssh
 
-   Running the second command with `sshd` failed.
+# if firewall is enabled
+sudo ufw allow ssh
+sudo ufw enable
+sudo ufw reload
+```
 
 ## ssh into another PC on local network
 
-I haven't succeeded so far in using ssh-copy-id, but it works to pass the public key via email and add it to `~/.ssh/authorized_keys` on the other machine. Then log in using
+First, make sure you have an SSH key on the computer, that the agent is on and the key is added. Then you can copy the key to the other machine:
 
-```bash
-# ip not needed if they share ip addressed
-ssh username@computer-name
+```ssh
+ssh-copy-id username@ip-address
 ```
 
-However, this only works when the lid is not closed. Solution:
-
-```bash
-sudo vim /etc/systemd/login.conf
-```
-
-Then uncomment `#HandleLidSwitch=suspend` and change it to `ignore`  
-
+On Linux Mint, the best way to get your ip address is to go to the network settings and select the IPv4 address.
